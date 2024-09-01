@@ -9,7 +9,7 @@ class OrderBook {
 private:
     std::priority_queue<Order> buyOrders;
     std::priority_queue<Order> sellOrders;
-    std::mutex bookMutex;
+    mutable std::mutex bookMutex;
 
 public:
     void addOrder(const Order& order);
