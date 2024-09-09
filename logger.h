@@ -18,5 +18,5 @@ std::mutex Logger::logMutex;
 void Logger::log(const std::string& message) {
     std::lock_guard<std::mutex> lock(logMutex);
     logFile << message << std::endl;
-    std::cout << message << std::endl;  // Optionally log to console as well
+    std::cout << message << std::endl;
 }
