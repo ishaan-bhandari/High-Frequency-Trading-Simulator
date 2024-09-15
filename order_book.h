@@ -1,4 +1,6 @@
 #include <unordered_map>
+#include "order.h"
+#include "logger.h"
 
 class OrderBook {
 private:
@@ -12,6 +14,7 @@ public:
     void matchOrders();
     void cancelOrder(int orderId);
     void modifyOrder(int orderId, double newPrice, int newQuantity);
+    bool empty() const;
 };
 
 void OrderBook::cancelOrder(int orderId) {
